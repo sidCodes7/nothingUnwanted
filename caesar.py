@@ -2,7 +2,10 @@ def encrypt(pt, k):
     res = ""
 
     for ch in pt:
-        res += chr((ord(ch)-65+k)%26+65)
+        if ch.isupper():
+            res += chr((ord(ch)-65+k)%26+65)
+        else:
+            res+=ch
 
     return res
 
